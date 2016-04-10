@@ -29,19 +29,18 @@ class LinePane extends Pane{
         pol.getPoints().addAll(
                 200d,100d,
                 200d,150d,
-                95d,304d,
+                95d,282d,
                 95d,400d,
                 405d,400d,
-                405d,304d,
+                405d,282d,
                 300d,150d,
                 300d,100d
         );
         getChildren().add(pol);
 		
 		
-		//thirty-six circle(dot) for block
-		Circle cir[] = new Circle[36];
-		for(int i=0;i<36;++i){
+		Circle cir[] = new Circle[28];
+		for(int i=0;i<28;++i){
 			cir[i] = new Circle(7);
 			if(i==0){
 				cir[i].setLayoutX(250);
@@ -71,37 +70,33 @@ class LinePane extends Pane{
                 cir[i].setLayoutY(260);
             }
            
-            else if(i>=21&&i<28){
+            else {
                 cir[i].setLayoutX(160+(i-21)*30);
                 cir[i].setLayoutY(282);
             }
-			else{
-				cir[i].setLayoutX(145+(i-28)*30);
-				cir[i].setLayoutY(304);
-			}
             getChildren().add(cir[i]);
         }
 		
 		
-		Line li1[] = new Line[8];
-		for(int i = 0;i<8;++i){
-			li1[i] = new Line(145+i*30,304,145+i*30,400);
+		Line li1[] = new Line[7];
+		for(int i = 0;i<7;++i){
+			li1[i] = new Line(160+i*30,282,160+i*30,400);
 			li1[i].setStrokeWidth(7);
 			li1[i].setStroke(Color.BLACK);
 			getChildren().add(li1[i]);
 		}
-	    Line li2[]= new Line[9];
-		li2[0] = new Line(95,400,145,400);
+	    Line li2[]= new Line[8];
+		li2[0] = new Line(95,400,160,400);
 		li2[0].setStrokeWidth(7);
 		getChildren().add(li2[0]);
-		for(int i = 1;i<8;++i){
-			li2[i] = new Line(145+(i-1)*30,400,175+(i-1)*30,400);
+		for(int i = 1;i<7;++i){
+			li2[i] = new Line(160+(i-1)*30,400,190+(i-1)*30,400);
 			li2[i].setStrokeWidth(7);
 			li2[i].setStroke(Color.GRAY);
 			getChildren().add(li2[i]);
 		}
-		li2[8] = new Line(355,400,405,400);
-		li2[8].setStrokeWidth(7);
-		getChildren().add(li2[8]);
+		li2[7] = new Line(340,400,405,400);
+		li2[7].setStrokeWidth(7);
+		getChildren().add(li2[7]);
 	}
 }
