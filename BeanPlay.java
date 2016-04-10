@@ -73,53 +73,20 @@ class LinePane extends Pane{
                 cir[i].setLayoutY(282);
             }
 			else{
-				cir[i].setLayoutX(145d+(i-28)*30);
+				cir[i].setLayoutX(145+(i-28)*30);
 				cir[i].setLayoutY(304);
 			}
             getChildren().add(cir[i]);
         }
 		
 		
-		//eight lines for local blocks
-		Line line3 = new Line(30,145,30,200);
-		line3.setStrokeWidth(4);
-		line3.setStroke(Color.BLACK);
-		getChildren().add(line3);
-		
-		Line line4 = new Line(50,145,50,200);
-		line4.setStrokeWidth(4);
-		line4.setStroke(Color.BLACK);
-		getChildren().add(line4);
-		
-		Line line5 = new Line(70,145,70,200);
-		line5.setStrokeWidth(4);
-		line5.setStroke(Color.BLACK);
-		getChildren().add(line5);
-		
-		Line line6 = new Line(90,145,90,200);
-		line6.setStrokeWidth(4);
-		line6.setStroke(Color.BLACK);
-		getChildren().add(line6);
-		
-		Line line7 = new Line(110,145,110,200);
-		line7.setStrokeWidth(4);
-		line7.setStroke(Color.BLACK);
-		getChildren().add(line7);
-		
-		Line line8 = new Line(130,145,130,200);
-		line8.setStrokeWidth(4);
-		line8.setStroke(Color.BLACK);
-		getChildren().add(line8);
-		
-		Line line9 = new Line(150,145,150,200);
-		line9.setStrokeWidth(4);
-		line9.setStroke(Color.BLACK);
-		getChildren().add(line9);
-		
-		Line line10 = new Line(170,145,170,200);
-		line10.setStrokeWidth(4);
-		line10.setStroke(Color.BLACK);
-		getChildren().add(line10);
+		Line li1[] = new Line[8];
+		for(int i = 0;i<8;++i){
+			li1[i] = new Line(145+i*30,304,145+i*30,400);
+			li1[i].setStrokeWidth(7);
+			li1[i].setStroke(Color.BLACK);
+			getChildren().add(li1[i]);
+		}
 		
 		
 		//ten lines for underlines and have different colors
