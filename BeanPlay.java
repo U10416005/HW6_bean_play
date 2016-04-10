@@ -17,6 +17,7 @@ public class BeanPlay extends Application{
     public void start(Stage primaryStage){
 		Pane pane = new Pane();
 		Scene scene = new Scene(pane,500,500);
+		//Draw the bean game border
 		Polyline pol = new Polyline();
         pol.getPoints().addAll(
                 200d,100d,
@@ -30,7 +31,7 @@ public class BeanPlay extends Application{
         );
         pane.getChildren().add(pol);
 		
-		
+		// write the circle for block
 		Circle cir[] = new Circle[28];
 		for(int i=0;i<28;++i){
 			cir[i] = new Circle(7);
@@ -68,6 +69,7 @@ public class BeanPlay extends Application{
             }
             pane.getChildren().add(cir[i]);
         }
+		//write the circle for the location to replace by player
 		Circle cir2[] = new Circle[8];
 		for(int i= 0;i<8;++i){
 			cir2[i] = new Circle(7);
@@ -78,7 +80,7 @@ public class BeanPlay extends Application{
 			pane.getChildren().add(cir2[i]);
 		}		
 		
-		
+		//write the line for block
 		Line li1[] = new Line[7];
 		for(int i = 0;i<7;++i){
 			li1[i] = new Line(160+i*30,282,160+i*30,400);
@@ -86,6 +88,7 @@ public class BeanPlay extends Application{
 			li1[i].setStroke(Color.BLACK);
 			pane.getChildren().add(li1[i]);
 		}
+		//write the line for location
 	    Line li2[]= new Line[8];
 		li2[0] = new Line(95,400,160,400);
 		li2[0].setStrokeWidth(7);
@@ -100,19 +103,20 @@ public class BeanPlay extends Application{
 		li2[7].setStrokeWidth(7);
 		pane.getChildren().add(li2[7]);
 		
-		
+		//mouse listener
 		scene.setOnMouseClicked(e ->{
 			double x = 250;
 			double y = 100;
+			//random color for ball
 			SecureRandom ran = new SecureRandom();
 			Circle playBall = new Circle();
 			playBall.setCenterX(x);
 			playBall.setCenterY(y);
 			playBall.setRadius(5);
-			//random color
 			Color color = new Color(ran.nextDouble(),ran.nextDouble(),ran.nextDouble(), 1.0);
 			playBall.setFill(color);
 			pane.getChildren().add(playBall);
+			//random situation
 			int si = ran.nextInt(128)+1;
 			switch(si){
 				case 1:
@@ -508,6 +512,7 @@ public class BeanPlay extends Application{
 	
 
 	}
+	//Animation
 	public void roll(Circle playBall,Circle ci1 ,Circle ci2,Circle ci3,Circle ci4,Circle ci5,Circle ci6,Circle ci7,Circle bottom){
 		Timeline rolling = new Timeline(
 			new KeyFrame(Duration.seconds(0),new KeyValue(playBall.centerYProperty(),50)),
