@@ -10,6 +10,7 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.scene.shape.*;
 import javafx.scene.paint.Color;
+import java.security.SecureRandom;
 
 public class BeanPlay extends Application{
 	@Override
@@ -18,6 +19,8 @@ public class BeanPlay extends Application{
 		primaryStage.setTitle("BeanGame");
 		primaryStage.setScene(scene);
 		primaryStage.show();
+		
+		
 	}
 }
 class LinePane extends Pane{
@@ -52,22 +55,22 @@ class LinePane extends Pane{
                 cir[i].setLayoutX(220d+(i-3)*30);
                 cir[i].setLayoutY(194);
             } 
-            /* Row 4 */
+            
             else if(i>=6&&i<10) {
                 cir[i].setLayoutX(205+(i-6)*30);
                 cir[i].setLayoutY(216);
             }
-            /* Row 5 */
+           
             else if(i>=10&&i<15) {
                 cir[i].setLayoutX(190+(i-10)*30);
                 cir[i].setLayoutY(238);
             }
-            /* Row 6 */
+           
             else if(i>=15&&i<21) {
                 cir[i].setLayoutX(175+(i-15)*30);
                 cir[i].setLayoutY(260);
             }
-            /* Row 7 */
+           
             else if(i>=21&&i<28){
                 cir[i].setLayoutX(160+(i-21)*30);
                 cir[i].setLayoutY(282);
@@ -87,52 +90,18 @@ class LinePane extends Pane{
 			li1[i].setStroke(Color.BLACK);
 			getChildren().add(li1[i]);
 		}
-		
-		
-		//ten lines for underlines and have different colors
-		Line line11 = new Line(0,200,30,200);
-		line11.setStrokeWidth(6);
-		line11.setStroke(Color.RED);
-		getChildren().add(line11);
-		
-		Line line12 = new Line(30,200,50,200);
-		line12.setStrokeWidth(6);
-		line12.setStroke(Color.BEIGE);
-		getChildren().add(line12);
-		
-		Line line13 = new Line(50,200,70,200);
-		line13.setStrokeWidth(6);
-		line13.setStroke(Color.BLUE);
-		getChildren().add(line13);
-		
-		Line line14 = new Line(70,200,90,200);
-		line14.setStrokeWidth(6);
-		line14.setStroke(Color.BROWN);
-		getChildren().add(line14);
-		
-		Line line15 = new Line(90,200,110,200);
-		line15.setStrokeWidth(6);
-		line15.setStroke(Color.CYAN);
-		getChildren().add(line15);
-		
-		Line line16 = new Line(110,200,130,200);
-		line16.setStrokeWidth(6);
-		line16.setStroke(Color.GREEN);
-		getChildren().add(line16);
-		
-		Line line17 = new Line(130,200,150,200);
-		line17.setStrokeWidth(6);
-		line17.setStroke(Color.GRAY);
-		getChildren().add(line17);
-		
-		Line line18 = new Line(150,200,170,200);
-		line18.setStrokeWidth(6);
-		line18.setStroke(Color.MAGENTA);
-		getChildren().add(line18);
-		
-		Line line19 = new Line(170,200,200,200);
-		line19.setStrokeWidth(6);
-		line19.setStroke(Color.GOLD);
-		getChildren().add(line19);
+	    Line li2[]= new Line[9];
+		li2[0] = new Line(95,400,145,400);
+		li2[0].setStrokeWidth(7);
+		getChildren().add(li2[0]);
+		for(int i = 1;i<8;++i){
+			li2[i] = new Line(145+(i-1)*30,400,175+(i-1)*30,400);
+			li2[i].setStrokeWidth(7);
+			li2[i].setStroke(Color.GRAY);
+			getChildren().add(li2[i]);
+		}
+		li2[8] = new Line(355,400,405,400);
+		li2[8].setStrokeWidth(7);
+		getChildren().add(li2[8]);
 	}
 }
