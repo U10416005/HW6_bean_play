@@ -14,7 +14,7 @@ import javafx.scene.paint.Color;
 public class BeanPlay extends Application{
 	@Override
     public void start(Stage primaryStage){
-		Scene scene = new Scene(new LinePane(),200,200);
+		Scene scene = new Scene(new LinePane(),500,500);
 		primaryStage.setTitle("BeanGame");
 		primaryStage.setScene(scene);
 		primaryStage.show();
@@ -22,16 +22,18 @@ public class BeanPlay extends Application{
 }
 class LinePane extends Pane{
 	public LinePane(){
-		//two lines for border
-		Line line1 = new Line(120,0,200,200);
-		line1.setStrokeWidth(1);
-		line1.setStroke(Color.BLACK);
-		getChildren().add(line1);
-		
-		Line line2 = new Line(80,0,0,200);
-		line2.setStrokeWidth(1);
-		line2.setStroke(Color.BLACK);
-		getChildren().add(line2);
+		Polyline pol1 = new Polyline();
+        pol1.getPoints().addAll(
+                200d,100d,
+                200d,150d,
+                100d,300d,
+                100d,400d,
+                400d,400d,
+                400d,300d,
+                300d,150d,
+                300d,100d
+        );
+        getChildren().add(pol1);
 		
 		
 		//thirty-six circle(dot) for block
@@ -277,75 +279,10 @@ class LinePane extends Pane{
 		getChildren().add(circle28);
 		
 		
-		
-		Circle circle29 = new Circle();
-		circle29.setCenterX(30);
-		circle29.setCenterY(145);
-		circle29.setRadius(4);
-		circle29.setStroke(Color.BLACK);
-		circle29.setFill(Color.BLACK);
-		getChildren().add(circle29);
-		
-		Circle circle30 = new Circle();
-		circle30.setCenterX(50);
-		circle30.setCenterY(145);
-		circle30.setRadius(4);
-		circle30.setStroke(Color.BLACK);
-		circle30.setFill(Color.BLACK);
-		getChildren().add(circle30);
-		
-		Circle circle31 = new Circle();
-		circle31.setCenterX(70);
-		circle31.setCenterY(145);
-		circle31.setRadius(4);
-		circle31.setStroke(Color.BLACK);
-		circle31.setFill(Color.BLACK);
-		getChildren().add(circle31);
-		
-		Circle circle32 = new Circle();
-		circle32.setCenterX(90);
-		circle32.setCenterY(145);
-		circle32.setRadius(4);
-		circle32.setStroke(Color.BLACK);
-		circle32.setFill(Color.BLACK);
-		getChildren().add(circle32);
-		
-		Circle circle33 = new Circle();
-		circle33.setCenterX(110);
-		circle33.setCenterY(145);
-		circle33.setRadius(4);
-		circle33.setStroke(Color.BLACK);
-		circle33.setFill(Color.BLACK);
-		getChildren().add(circle33);
-		
-		Circle circle34 = new Circle();
-		circle34.setCenterX(130);
-		circle34.setCenterY(145);
-		circle34.setRadius(4);
-		circle34.setStroke(Color.BLACK);
-		circle34.setFill(Color.BLACK);
-		getChildren().add(circle34);
-		
-		Circle circle35 = new Circle();
-		circle35.setCenterX(150);
-		circle35.setCenterY(145);
-		circle35.setRadius(4);
-		circle35.setStroke(Color.BLACK);
-		circle35.setFill(Color.BLACK);
-		getChildren().add(circle35);
-		
-		Circle circle36 = new Circle();
-		circle36.setCenterX(170);
-		circle36.setCenterY(145);
-		circle36.setRadius(4);
-		circle36.setStroke(Color.BLACK);
-		circle36.setFill(Color.BLACK);
-		getChildren().add(circle36);
-		
 		//eight lines for local blocks
 		Line line3 = new Line(30,145,30,200);
 		line3.setStrokeWidth(4);
-		line1.setStroke(Color.BLACK);
+		line3.setStroke(Color.BLACK);
 		getChildren().add(line3);
 		
 		Line line4 = new Line(50,145,50,200);
